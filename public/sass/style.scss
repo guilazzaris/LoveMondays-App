@@ -1,59 +1,301 @@
-/* Variables */
-$background: #efefef;
+/*
+  Google fonts
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600);
+
+/*
+  Variables
+*/
+
+$background: #eee;
+$shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 
 
-/* Reset background */
-body, ion-content {background:$background;}
+/*
+  Global classes
+*/
 
+body, ion-content {
+  background: $background;
+  font-family: 'Source Sans Pro', sans-serif;
+}
 
-/* Css highlights module */
-.card {
-  .item {
-    padding:0;
+body p,
+body span {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+/*
+  Css dos módulos
+*/
+
+#wrap .card {
+  padding: 0px;
+
+  .result-stats {
+    margin: 16px;
   }
 
-  .item.highlights {
+  .filters {
+    margin:0 16px 16px 16px;
+
+    button {
+      -webkit-box-shadow: $shadow;
+      -moz-box-shadow: $shadow;
+      box-shadow: $shadow;
+    }
+
+    button:nth-child(2) {
+      float:right;
+    }
+
+    button.icon-love-filter:before {
+      content: '';
+      min-width: 20px;
+      min-height: 45px;
+      background: url(../img/add.svg) no-repeat center center;
+      background-size: 15px;
+    }
+  }
+
+  .average {
+    text-align:right;
+    margin:0 16px 0px 16px;
+  }
+
+  .list {
+    margin-bottom: 0;
+
+    .title {
+      white-space: normal;
+    }
+
+    .description {}
+
+    .item:last-child,
+    .item:first-child {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+
+  .list.list-free {
+    .value {
+      float:right;
+    }
+  }
+
+  .list.list-blocked {
+    .item-icon-right {
+      padding-right:80px;
+
+      .icon:before {
+          content: '';
+          min-width: 52px;
+          min-height: 45px;
+          border-radius: 4px;
+          -webkit-box-shadow: $shadow;
+          -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+      }
+
+      .icon-love-add {
+        background: url(../img/add.svg) no-repeat center center;
+        background-size: 15px;
+      } 
+    }
+  }
+
+  .login {
+    background:#f6f6f6;
+    padding:15px 10px;
+    display:block;
+
+    .title {
+      text-align:center;
+    }
+
+    .login-box {
+      margin:15px 0;
+
+      ul:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      ul li:nth-child(2) a {
+        background:#fff;
+      }
+
+      ul li a {
+        display:block;
+        background:#ddd;
+        width:50%;
+        height:50px;
+        line-height:50px;
+        text-align:center;
+        float:left;
+        text-decoration:none;
+      }
+
+      .login-buttons {
+        padding:16px;
+
+        li {
+          width:50%;
+          float:left;
+
+          button {
+            width:100%;
+          }
+        }
+
+        li:nth-child(1) {
+          padding-right:8px;
+        }
+
+        li:nth-child(2) {
+          padding-left:8px;
+        }
+
+        button {
+          -webkit-box-shadow: $shadow;
+          -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+        }
+
+        .divider {
+          width:100%;
+          text-align:center;
+          border-bottom: 1px solid #ddd;
+          line-height:1px;
+          margin:30px 0;
+  
+          span {
+            background:#fff;
+            padding:0 10px;
+          }
+        }
+
+        .expand {
+          .open {
+            display:none; 
+            text-align:center;
+          }
+
+          .form {
+            label {
+              border: 1px solid #ddd;
+              border-radius: 4px;
+              margin-bottom:5px;
+            }
+
+            button {
+              display:block;
+              margin:16px auto 25px auto;
+              -webkit-box-shadow: $shadow;
+              -moz-box-shadow: $shadow;
+              box-shadow: $shadow;
+            }
+
+            .forgot-password {
+              display:block; 
+              text-align:center;
+              margin:0;
+            }
+          }
+        }
+      }
+    }
+
+    .description {
+      text-align:center;
+
+      strong {
+        display:block;
+      }
+    }
+  }
+
+  .load-page {
+    padding:16px;
+
+    p {
+      text-align:center;
+      margin-bottom:15px;
+    }
+
+    button {
+      margin:0 auto; display:block;
+      -webkit-box-shadow: $shadow;
+      -moz-box-shadow: $shadow;
+      box-shadow: $shadow;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+#wrap .highlights {
+  .item {
+    padding: 0;
+
     div:nth-child(1) {
-      width:100%;
-      height:230px;
-      padding:10px;
-      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(http://bit.ly/1YGVrHF); /* http://bit.ly/1YGVrHF */ /* http://bit.ly/1YGI4r1 */ /* http://bit.ly/1WFPb4Y */
-      background-size:cover;
+      height: 230px;
       padding: 10px;
+      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(http://bit.ly/1YGVrHF);
+      background-size: cover;
 
       p {
-        color:#fff;
-        font-weight:bold;
-        font-size:16px;
-        text-align:center;
-        margin:0px 40px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        text-align: center;
+        margin: 0px 40px;
+        white-space: normal;
       }
 
       button.button.button-light.button-outline {
         background: transparent;
-        color:#fff;
-        border:2px solid #fff;
-        font-weight:bold;
-        display:block;
-        margin:80px auto;
+        color: #fff;
+        border: 2px solid #fff;
+        font-weight: bold;
+        display: block;
+        margin: 80px auto;
       }
     }
 
     div:nth-child(2) {
-      padding:10px;
+      padding: 10px;
 
       img {
-        width:75px;
-        height:75px;
-        padding:5px;
-        background:#fff;
-        margin:-35px 0 15px;
+        width: 75px;
+        height: 75px;
+        padding: 5px;
+        background: #fff;
+        margin: -35px 0 15px;
         border-radius: 4px;
-        -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.5);
-        -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.5);
-        box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.5);
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
       }
-    }
-  } 
 
+      p {white-space: normal;}
+    }
+  }
 }
+
+/* Css para a lista */
+
+
