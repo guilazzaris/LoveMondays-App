@@ -1,10 +1,10 @@
 (function() {
   'use strict';
 
-  function profileCtrl($scope) {
+  function profileCtrl($scope, $rootScope) {
     $scope.loginBox = function(val) {
-      if(val == 'open') {
-        $scope.$broadcast('loginBox:open');
+      if(val == 'show') {
+        $scope.$broadcast('loginBox:show');
       }
     }
   }
@@ -30,7 +30,7 @@
           });
         }
 
-        $scope.$on('loginBox:open', function(event) {
+        $scope.$on('loginBox:show', function(event) {
           login.fadeIn('fast', function() {
             
             var viewport = (login.offset().top - ((screen.height - login.height()) * 0.5));

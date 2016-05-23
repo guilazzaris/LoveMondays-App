@@ -1,0 +1,27 @@
+<ion-modal-view class="flavors bg">
+  <div class="bar bar-header bar-assertive item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <!-- <input type="search" placeholder="Buscar"> -->
+    <input type="search" placeholder="Buscar" ng-keyup="search.request(search.input)" ng-model="search.input">
+  </label>
+  <button class="button button-clear" on-tap="modal.action('hide')">
+    Cancel
+  </button>
+</div>
+
+  <ion-content class="has-header">
+
+    <div id="wrap">
+      <div class="card">
+        <ul class="list list-free">
+          <li class="item">
+            <p class="title">Qual empresa vc está procurando?</p>
+            <!--span class="description">4 salários</span-->
+          </li>
+        </ul>
+      </div>
+    </div><!-- #wrap -->
+  </ion-content>
+
+</ion-modal-view>

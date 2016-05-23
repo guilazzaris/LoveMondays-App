@@ -13,7 +13,7 @@ gulp.task('styles', function() {
 gulp.task('connect:dev', function() {
   return connect.server({
 		root: 'public',
-		port: 8000,
+		port: 8100,
 		livereload: true,
 		
     middleware: function(connect) {
