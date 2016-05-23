@@ -13,6 +13,16 @@ angular.module('app', [
       controller: 'AppCtrl'
     })
 
+    .state('app.profile', {
+      url: '/profile',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/profile/template.html',
+          controller: 'profileCtrl'
+        }
+      }
+    });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/profile');
 })

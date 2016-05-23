@@ -45,19 +45,6 @@
 
   angular.module('app.profile', [])
     .controller('profileCtrl', ['$scope', profileCtrl])
-    .directive('profileDirective', ['$ionicScrollDelegate', profileDirective])
-    .config(function($stateProvider) {
-      $stateProvider
-
-      .state('app.profile', {
-        url: '/profile',
-        views: {
-          'menuContent': {
-            templateUrl: 'app/profile/template.html',
-            controller: 'profileCtrl'
-          }
-        }
-      });
-    });
+    .directive('profileDirective', ['$ionicScrollDelegate', profileDirective]);
 
 }());

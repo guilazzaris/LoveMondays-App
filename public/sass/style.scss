@@ -8,7 +8,9 @@
   Variables
 */
 
-$background: #eee;
+$base-color: #276EA4;
+$text-color: #000;
+$background: lighten($text-color, 90%);
 $shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 
 
@@ -23,9 +25,18 @@ body, ion-content {
 
 body p,
 body span {
-  color: #666;
+  color: lighten($text-color, 55%);
   font-size: 14px;
   margin-bottom: 2px;
+}
+
+.bar.bar-positive {
+  background:$base-color !important;
+}
+
+.nav-bar-title img {
+  height:20px;
+  margin-top:12px;
 }
 
 /*
@@ -33,10 +44,49 @@ body span {
 */
 
 #wrap .header {
+  .info {
+    padding:25px 16px;
+    background: linear-gradient(transparentize($base-color, .8) 0%, rgba(255, 255, 255, 1) 30%), url(../img/company-page-background@3x.png) no-repeat center top;
+    background-size:100%;
+
+    img {
+      width: 75px;
+      height: 75px;
+      padding: 5px;
+      background: #fff;
+      border-radius: 4px;
+      margin:0 auto;
+      display:block;
+      -webkit-box-shadow: $shadow;
+      -moz-box-shadow: $shadow;
+      box-shadow: $shadow;
+    }
+
+    p {
+      margin:16px auto;
+      padding:0 15px;
+      text-align: center;
+      color: $text-color;
+      font-size:18px;
+    }
+
+    button.button.button-positive {
+      display: block;
+      margin: 0 auto;
+      background:$base-color;
+      font-size:14px;
+      font-weight:600;
+    }
+  }
+
   .horizontal {
     overflow: scroll;
     white-space: nowrap;
     background: #fff;
+
+    -webkit-box-shadow: 0 0px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.3);
 
     a {
       display: inline-block;
@@ -47,10 +97,13 @@ body span {
       text-align: center;
       line-height: 52px;
       text-decoration: none;
+      color: lighten($text-color, 55%);
     }
 
     .selected {
-      border-bottom:2px solid #f44;
+      border-bottom:2px solid #1FB3AA;
+      color: $text-color;
+      font-weight:600;
     }
 
     .scroll-bar-h {
@@ -64,12 +117,21 @@ body span {
 
   .result-stats {
     margin: 16px;
+
+    p {
+      color: $text-color;
+      font-size:18px;
+    }
   }
 
   .filters {
     margin:0 16px 16px 16px;
 
     button {
+      font-size: 14px;
+      font-weight:600;
+      color: $base-color;
+
       -webkit-box-shadow: $shadow;
       -moz-box-shadow: $shadow;
       box-shadow: $shadow;
@@ -83,8 +145,8 @@ body span {
       content: '';
       min-width: 20px;
       min-height: 45px;
-      background: url(../img/add.svg) no-repeat center center;
-      background-size: 15px;
+      background: url(../img/reorder.svg) no-repeat center center;
+      background-size: 20px;
     }
   }
 
@@ -96,8 +158,22 @@ body span {
   .list {
     margin-bottom: 0;
 
+    .item {
+      padding-left:0;
+      padding-right:0;
+      margin-left:16px;
+      margin-right:16px;
+    }
+
     .title {
       white-space: normal;
+      color: $base-color;
+      font-size:18px;
+    }
+
+    .value {
+      color: $text-color;
+      font-size:18px;
     }
 
     .description {}
@@ -129,7 +205,7 @@ body span {
       }
 
       .icon-love-add {
-        background: url(../img/add.svg) no-repeat center center;
+        background: url(../img/unlock.svg) no-repeat center center;
         background-size: 15px;
       } 
     }
@@ -137,10 +213,11 @@ body span {
 
   .login {
     padding:15px 10px;
-    background:#f6f6f6;
+    background: lighten($text-color, 96%);
 
     .title {
       text-align:center;
+      padding:0 25px;
     }
 
     .login-box {
@@ -176,6 +253,20 @@ body span {
 
           button {
             width:100%;
+            font-size: 14px;
+            font-weight: 600;
+            padding-left: 35px;
+          }
+
+          .facebook {
+            background:#3B5998 url(../img/facebook_icon.svg) no-repeat -3px center;
+            color:#fff;
+          }
+
+          .google {
+            background:#d34836 url(../img/google_icon.svg) no-repeat -3px center;
+            background-size:50px;
+            color:#fff;
           }
         }
 
@@ -188,6 +279,10 @@ body span {
         }
 
         button {
+          color:#fff;
+          font-size: 14px;
+          font-weight:600;
+          background:$base-color;
           -webkit-box-shadow: $shadow;
           -moz-box-shadow: $shadow;
           box-shadow: $shadow;
@@ -241,6 +336,7 @@ body span {
 
     .description {
       text-align:center;
+      padding:0 25px;
 
       strong {
         display:block;
@@ -251,7 +347,8 @@ body span {
 
 
   .load-page {
-    padding:16px;
+    padding:16px 0;
+    margin:0 16px;
     border-top: 1px solid #ddd;
 
     p {
@@ -260,6 +357,10 @@ body span {
     }
 
     button {
+      font-size: 14px;
+      font-weight:600;
+      color: $base-color;
+
       margin:0 auto; display:block;
       -webkit-box-shadow: $shadow;
       -moz-box-shadow: $shadow;
@@ -281,7 +382,7 @@ body span {
       p {
         color: #fff;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 18px;
         text-align: center;
         margin: 0px 40px;
         white-space: normal;
