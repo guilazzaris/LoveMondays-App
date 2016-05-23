@@ -12,11 +12,11 @@
 
   <ion-content class="has-header">
     <div id="wrap">
-      <div class="card">
-        <ul class="list list-free" style="display:none;"><!-- Css temporário para esconder o estilo (search) -->
-          <li class="item">
-            <p class="title">Qual empresa vc está procurando?</p>
-            <span class="description">4 salários</span>
+      <div class="card" ng-show="search.results">
+        <ul class="list list-free">
+          <li class="item" ng-repeat="result in search.results track by $index">
+            <p class="title">{{result.name}}</p>
+            <!--span class="description">{{result.type}}</span-->
           </li>
         </ul>
       </div>
