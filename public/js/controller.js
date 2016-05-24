@@ -6,7 +6,7 @@
       if(val == 'show') {
         $scope.$emit('modalSearch:show');
       }
-    }
+    };
   }
 
   function ProfileCtrl($scope) {
@@ -14,7 +14,7 @@
       if(val == 'show') {
         $scope.$broadcast('loginBox:show');
       }
-    }
+    };
   }
 
   angular

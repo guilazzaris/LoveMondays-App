@@ -20,7 +20,7 @@
             $ionicScrollDelegate.$getByHandle('viewport').scrollBy(0, viewport, true);
 
           });
-        }
+        };
 
         $scope.$on('loginBox:show', function(event) {
           login.fadeIn('fast', function() {
@@ -32,7 +32,7 @@
         });
 
       }
-    }
+    };
   }
 
   function modalSearch($ionicModal) {
@@ -85,7 +85,7 @@
         });
 
       }
-    }
+    };
   }
 
   angular
