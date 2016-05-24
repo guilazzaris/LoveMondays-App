@@ -92,7 +92,7 @@ gulp.task('dev:reload', function(callback) {
 });
 
 gulp.task('dev', function(callback) {
-  return runSequence(['jshint', 'jasmine', 'styles'], 'copy:styles', 'copy:scripts', 'connect:dev', 'watch', callback);
+  return runSequence(['jasmine', 'styles'], 'copy:styles', 'copy:scripts', 'connect:dev', 'watch', callback);
 });
 
 /*
