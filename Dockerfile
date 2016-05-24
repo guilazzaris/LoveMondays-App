@@ -40,7 +40,3 @@ RUN git clone https://github.com/guilazzaris/LoveMondays-App.git /usr/app
 
 # Install application
 RUN cd /usr/app && npm install && bower install --allow-root
-
-EXPOSE 8001
-
-RUN cd /usr/app && gulp build
